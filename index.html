@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-body">              
+                <form id="taxForm" class="m-3">                 
+                    <div class="form-group">
+                        <label for="income" class="mt-5 " tooltip="question">Enter gross annual income<i class="fas fa-question-circle m-1" id="tooltip"> <span id="tooltiptext">Gross annual income is your total salary in a year before any deductions</span></i> </label>                      
+                        <span id="s"> 
+                            <div class="input-group"> 
+                                <input class="form-control" placeholder="Enter gross annual income" id="income" required >
+                                <div class="input-group-append"> 
+                                    <span class="input-group-text"><i class="fas fa-exclamation-circle" id="tooltip4"><span id="tooltiptext4">Please enter numbers only</span></i></span>
+                                </div>
+                            </div>
+                        </span>
+                    </div>                   
+                    <div class="form-group">
+                        <label for="extraIncome">Enter extra income<i class="fas fa-question-circle m-1" id="tooltip1"> <span id="tooltiptext1">Extra income is your income from other sources</span></i></label>
+                        <!-- <input class="form-control" placeholder="Enter extra income from other sources" id="extraIncome" required> -->
+                        <span id="s"> 
+                            <div class="input-group"> 
+                                <input class="form-control" placeholder="Enter extra income from other sources" id="extraIncome" required >
+                                <div class="input-group-append"> 
+                                    <span class="input-group-text"><i class="fas fa-exclamation-circle" id="tooltip4"><span id="tooltiptext4">Please enter numbers only</span></i></span>
+                                </div>
+                            </div>
+                        </span>
+                    </div>                  
+                    <div class="form-group">
+                        <label for="ageGroup">Select age group
+                            <i class="fas fa-question-circle m-1" id="tooltip2">
+                                <span id="tooltiptext2">Age group: if less than 40, then no tax; if between 40 and 60, tax applies; if 60 or older, tax applies.</span>
+                            </i>
+                        </label>
+                        <select class="form-control" id="ageGroup" required>
+                            <option value="">Select</option>
+                            <option value="<40">Less than 40</option>
+                            <option value="≥40&<60">Between 40 and 60</option>
+                            <option value="≥60">60 or older</option>
+                        </select>
+                    </div>                  
+                    <div class="form-group">
+                        <label for="deductions">Enter total applicable deductions:<i class="fas fa-question-circle m-1" id="tooltip3"> <span id="tooltiptext3">Total applicable deductions is your income plus extra income minus deductions</span></i></label>
+                        <!-- <input class="form-control" placeholder="Add total applicable deductions" id="taxRate" required> -->
+                        <span id="s"> 
+                            <div class="input-group"> 
+                                <input class="form-control" placeholder="Add total applicable deductions" id="deductions" required >
+                                <div class="input-group-append"> 
+                                    <span class="input-group-text"><i class="fas fa-exclamation-circle" id="tooltip4"><span id="tooltiptext4">Please enter numbers only</span></i></span>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                    <button type="submit" id="myBtn" class="btn btn-block mt-5">Submit</button>
+                </form>
+                <!-- <div id="result" class="mt-3"></div> -->
+
+            </div>
+        </div>
+        
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" id="result">
+          <span class="close">&times;</span>
+
+          <!-- <p>Some text in the Modal..</p> -->
+        </div>
+      
+      </div>
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
